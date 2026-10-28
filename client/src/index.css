@@ -1,0 +1,63 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-synthesis: none; text-rendering: optimizeLegibility; }
+html { background: #f4f8fc; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: #f4f8fc; }
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
+button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid rgba(14, 165, 233, .25); outline-offset: 2px; }
+::selection { background: #bae6fd; color: #0c4a6e; }
+
+/* Refined light palette: cool gray surfaces, sky-blue actions, softer borders. */
+.bg-indigo-600 { background-color: #0284c7; }
+.hover\:bg-indigo-700:hover { background-color: #0369a1; }
+.text-indigo-600 { color: #0284c7; }
+.text-indigo-700 { color: #0369a1; }
+.bg-indigo-50 { background-color: #eaf7ff; }
+.bg-indigo-100 { background-color: #d9f0ff; }
+.border-indigo-200 { border-color: #bae6fd; }
+.focus\:border-indigo-500:focus { border-color: #0ea5e9; }
+.focus\:ring-indigo-100:focus { --tw-ring-color: #e0f2fe; }
+.focus\:ring-indigo-200:focus { --tw-ring-color: #bae6fd; }
+
+/* Dark appearance is activated by the persistent .dark class on the root element. */
+.dark, .dark body { color-scheme: dark; background: #0b1220; }
+.dark body { background: #0b1220; color: #e2e8f0; }
+.dark .app-shell { background: #0b1220; color: #e2e8f0; }
+.dark .sidebar { background: #111c2e; border-color: #26364b; }
+.dark .main-content { background: #0b1220; }
+.dark .bg-white { background-color: #142033; }
+.dark .bg-slate-50 { background-color: #101b2c; }
+.dark .bg-slate-100 { background-color: #1e2c40; }
+.dark .bg-slate-200 { background-color: #26364b; }
+.dark .text-slate-800, .dark .text-slate-900 { color: #edf5ff; }
+.dark .text-slate-700 { color: #d5e2f1; }
+.dark .text-slate-600 { color: #bac9dc; }
+.dark .text-slate-500 { color: #9aadc4; }
+.dark .text-slate-400 { color: #7f94ad; }
+.dark .border-slate-100, .dark .border-slate-200, .dark .border-slate-300 { border-color: #2a3a50; }
+.dark .divide-slate-100 > :not([hidden]) ~ :not([hidden]) { border-color: #2a3a50; }
+.dark .shadow-sm, .dark .shadow-xl { --tw-shadow-color: rgb(0 0 0 / .15); }
+.dark .bg-indigo-50 { background-color: #102f49; }
+.dark .bg-indigo-100 { background-color: #17405e; }
+.dark .text-indigo-700, .dark .text-indigo-600 { color: #7dd3fc; }
+.dark .bg-indigo-600 { background-color: #0284c7; }
+.dark .hover\:bg-slate-50:hover { background-color: #1e2c40; }
+.dark input, .dark select, .dark textarea { background-color: #101b2c; color: #e2e8f0; border-color: #33465f; }
+.dark input::placeholder, .dark textarea::placeholder { color: #8296af; }
+.dark option { background: #142033; color: #e2e8f0; }
+.dark .nav-link-active { background: #102f49; color: #bae6fd; }
+.dark .theme-toggle { border-color: #30445d; }
+
+/* Small quality-of-life polish across the whole app. */
+main h1 { letter-spacing: -.035em; }
+main h2 { letter-spacing: -.02em; }
+main > div > section > h2 { color: #1e3a5f; }
+.dark main > div > section > h2 { color: #e0f2fe; }
+main .rounded-2xl.border.bg-white, main li.rounded-2xl { transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease; }
+main li.rounded-2xl:hover { border-color: #c5e8fa; box-shadow: 0 8px 22px rgb(15 72 110 / .06); }
+.dark main li.rounded-2xl:hover { border-color: #286084; box-shadow: 0 8px 22px rgb(0 0 0 / .15); }
+main button { transition: background-color .16s ease, border-color .16s ease, color .16s ease, transform .16s ease; }
+main button:active { transform: translateY(1px); }
+@media (max-width: 767px) { .sidebar { gap: 0; } .nav-link { padding: .55rem .75rem; } }
